@@ -1,0 +1,42 @@
+$html5
+<element id="jerry" class="very_classy">
+	<body>
+	jim
+	jones .person
+		$"macro_is_text
+		$"macro spaced text
+		$"macro spaced*
+	.animal
+	<br>
+	<a>
+		$unknownmacro
+	<pre>
+		$preformatted
+	<p>
+		$notpreformatted_ident
+<otherelement id=john class=hardly_classy>
+  	$macro andy unspecified .candyman .unspecified more stuff  <element unspec id="redund" unspec class="redundant" unspec more stuff > <another element> more stuff "direct\" 'text''<br>block" here"
+
+html5:
+<!DOCTYPE html>
+<html>
+	<body>
+
+preformatted:
+	"This is preformatted text."
+	"this is"
+	"more"
+	"	preformatted"
+	"		text"
+
+
+notpreformatted_ident
+	"This is not"
+	"	preformatted"
+	"		text"
+
+"macro_is_text
+	"and more text follows
+
+"macro spaced text
+	"and more text follows

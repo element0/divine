@@ -1,0 +1,54 @@
+# divinity hiena definitions file
+
+== PRECEDENCE: divinity ==
+
+ox:divinity
+
+--------
+
+
+== COMPOSITION: divinity ==
+
+line
+    html
+  | shorthand
+  | text
+  | macro
+  | label
+  | comment
+  | switch
+
+--------
+
+
+== RECOGNIZERS:  divinity ==
+
+
+macro
+  ^\$ (url) blank* .* iterator? $
+
+iterator
+  [{]([[:digit:]])[}]
+
+text
+  ^["].*$
+
+shorthand
+  ^ (id)? (class)? (attribute)*
+ 
+comment
+  ^[/][/].*$
+
+switch
+  ^[@]varname
+  | [(] alt ([|] alt)+ [)]
+
+branch
+  [|] multilinebranch+
+
+multilinebranch
+  [^|]{+}[\n]{+} outline
+
+--------
+
+

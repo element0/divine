@@ -1,0 +1,3 @@
+macro_self_recursion
+	envelope .box
+		$macro_self_recursion{4}

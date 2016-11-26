@@ -1,0 +1,5 @@
+macro_self_references
+	this_is_an_envelope
+		$macro_self_references
+	but_what_happens_a_second_time	.question
+		$macro_self_references

@@ -1,0 +1,547 @@
+#!/home/raygan/Cosms/Dboy/Divinity/divinity
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Divinity - Documentation
+		<link rel="stylesheet" type="text/css" href="main.css">
+	<body>
+		$divinity_site
+
+
+TODO:
+	<pre>
+		"todo:	explain fileposition trace through files.
+		"todo:	describe first match wins search order when parsing file
+
+
+
+divinity_site
+	page_content
+		main_column
+			$title_header
+			$navmenu
+			$main_text_column
+
+		$more
+
+		$nav
+
+navmenu
+	about.navitm
+		"about
+	download.navitm
+		"download
+	documentation.navitm
+		"documentation
+	contact.navitm
+		"contact
+
+
+main_text_column
+		whatis_section .section
+			$whatis
+		whatit_looks_like_section .section
+			$what_it_looks_like
+		language_section .section
+			$the_complete_language
+
+
+
+		whofor-pane.filepane
+			$filepane_border_set
+			$whofor
+			"
+		$complete_example
+		$executive_summary
+
+		<!--^^^^^^^ BREAK vvvvvvv -->
+
+		howto-pane .filepane
+			$filepane_border_set
+			$howto
+
+		<!--^^^^^^^ BREAK vvvvvvv -->
+
+		install-pane.filepane
+			$filepane_border_set
+			$installation
+		minimanual-pane.filepane
+			$filepane_border_set
+			$mini-manual
+	//
+	.panes
+		outline-pane .filepane
+			$filepane_border_set
+			"DIVINITY FILE:
+			<pre>
+				$divinity-file
+		css-pane .filepane
+			$filepane_border_set
+			"CSS FILE:
+			<pre>
+				$css-file
+		html-pane .filepane
+			$filepane_border_set
+			"HTML OUTPUT:
+			<pre>
+				$html-output
+	.panes
+		$alternation_eg
+	.panes
+		$macros_eg
+	.panes
+
+more
+	"<a href="">more...</a>
+
+
+nav
+	leftbutton.navbtn
+		"&lt;
+	rightbutton.navbtn
+		"&gt;
+	navbar
+	view
+
+
+
+divinity-file:
+	"$html5
+	"	someid .someclass
+	"		&quot;Divine Example
+	"
+	"html5:
+	"&lt;!DOCTYPE html>
+	"&lt;html>
+	"	&lt;body>
+	"		$html5
+
+css-file:
+	".someclass {
+	"}
+	"#someid {
+	"}
+
+html-output:
+	"&lt;!DOCTYPE html>
+	"&lt;html>
+	"	&lt;body>
+	"		&lt;div id=&quot;someid&quot; class=&quot;someclass&quot;>
+	"			Divine Example&lt;br>
+	"		&lt;/div id=&quot;someid&quot;>
+	"	&lt;/body>
+	"&lt;/html>
+
+filepane_border_set:
+	.filepane-border
+	.filepane-inset
+
+	.filepane-border-top
+	.filepane-border-left
+
+
+title_header
+	title_bubble
+		title
+			'<a href=""><b>Div</b>inity</a>
+		tagline
+			"a simple web language
+			undefined@RANDOM
+				undef1
+					"the devil is in the divs
+				undef2 |
+					"take your divs to a whole new level
+				undef3 |
+					"WYSIWYG? you're above that.
+		byline
+			'released under GPL3 by <a href="">element<code class="txt-zero">0</code></a>
+
+whofor
+	"who it's for:
+	"web designers and content executives
+
+whatis:
+	"<h2>WHAT IT IS:</h2>
+	<p>
+		"Indented text --> HTML.
+	<p>
+		"Easy hand-coding of &lt;div> hierarchies.
+	<p>
+		"No closing tags required.
+
+
+	<!--^^^^^^^ BREAK vvvvvvv -->
+
+	<p>
+		"No markup required to define div's.
+	<p>
+		"It uses macros to make coding modular.
+	<p>
+		"It replaces hand-coding HTML.
+	<p>
+	"It's syntax is minimal:  line level syntax is borrowed from other languages.  Block level syntax is all about how you use blank lines and indents.
+"WHAT IT'S NOT:
+	"It's not a scripting language.  It's not dynamic.
+	"It's not a replacement for CGI.
+	"
+	"It does not validate your HTML. Be warned:<i>GIGO.</i>
+	"
+
+what_it_looks_like:
+"
+.panes
+	demo001.filepane
+		.filepane-header
+			"<h3>text file</h3>
+		.filepane-content
+			$filepane_border_set
+			<pre>
+				"bluebox
+				"	redbox
+				"		greenbox
+	demo002.filepane
+		.filepane-header
+			"<h3><i>generates...</i></h3>
+		.filepane-content
+			$filepane_border_set
+			<pre>
+				"&lt;div id="bluebox">
+				"	&lt;div id="redbox">
+				"		&lt;div id="greenbox">
+				"		&lt;/div>
+				"	&lt;/div>
+				"&lt;/div>
+		.filepane-header
+			"<h3>Close tags are auto-generated.</h3>
+.panes
+	demo003.filepane
+		.filepane-header
+			"<h3><i>add classes and macros...</i></h3>
+		.filepane-content
+			$filepane_border_set
+			<pre>
+				"bluebox .box
+				"	$redbox
+				"		yellowbox.box
+				"
+				"
+				"redbox .box
+				"	greenbox .box
+				"			
+		.filepane-header
+			"<h3>Whitespace is optional between id and class.</h3>
+			"<h3>Macros start with a "$" and expand to envelope the child.</h3>
+	demo004.filepane
+		.filepane-header
+			"<h3><i>generates...</i></h3>
+		.filepane-content
+			$filepane_border_set
+			<pre>
+				"&lt;div id="bluebox" class="box">
+				"	&lt;div id="redbox" class="box">
+				"		&lt;div id="greenbox" class="box">
+				"			&lt;div id="yellowbox" class="box">
+				"			&lt;/div>
+				"		&lt;/div>
+				"	&lt;/div>
+				"&lt;/div>
+.panes
+	demo005.filepane
+		.filepane-header
+			"<h3><i>add some HTML...</i></h3>
+		.filepane-content
+			$filepane_border_set
+			<pre>
+				"&lt;!DOCTYPE html>
+				"&lt;html>
+				"	bluebox .box
+				"		$redbox
+				"			yellowbox.box
+				"
+				"
+				"redbox .box
+				"	greenbox .box
+				"			
+	demo006.filepane
+		.filepane-header
+			"<h3><i>generates...</i></h3>
+		.filepane-content
+			$filepane_border_set
+			<pre>
+				"&lt;!DOCTYPE html>
+				"&lt;html>
+				"	&lt;div id="bluebox" class="box">
+				"		&lt;div id="redbox" class="box">
+				"			&lt;div id="greenbox" class="box">
+				"				&lt;div id="yellowbox" class="box">
+				"				&lt;/div>
+				"			&lt;/div>
+				"		&lt;/div>
+				"	&lt;/div>
+				"&lt;/html>
+
+macros_promo:
+"<h2>MACRO-POWER!</h2>
+.panes
+	demo007.filepane
+		.filepane-header
+			"<h3>text file</h3>
+		.filepane-content
+	demo008.filepane
+		.filepane-header
+			"<h3><i>generates...</i></h3>
+		.filepane-content
+	
+		
+
+howto
+	"USE CASE:
+	"at a meeting or during a brainstorm
+	"someone 'sketches' an outline of content
+	"
+	"after the initial idea has been outlined
+	"	the outline can be extended with divine markdown
+	"	a separate user supplied css file can reference the idents, classes and elements
+	"	with divinity installed on the web server, a #! directive added to the first line
+	"		and the execute bit on the outline file set,
+	"		the outline can be executed as a CGI program on the webserver
+	"		generating HTML on the fly.
+	"	the design can be tweaked entirely by outline and css and the results viewed instantly via the web.
+	"	once the design is set the output can be directed to an html file.
+
+mini-manual
+	$using_as_cgi
+	$language_and_multiversioning
+
+
+installation
+	"INSTALLATION:
+	"For <code>CLI</code> install <code>divinity</code> in the <code>PATH</code> accessible by your shell."
+	"For <code>CGI</code> install <code>divinity</code> in the <code>PATH</code> accessible by your webserver.  (This would be the <i>binary</i> path not the cgi path.)"
+
+
+using_as_cgi
+	outputting_http_headers
+		"the important http headers are character encoding and language.
+
+language_and_multiversioning
+	"language locale
+		"obviously, if you want to have a different language version of your site
+		"you will have to request certain locale specific resources
+		"and will need to set the language encoding for the locale
+		"this should be dynamic.
+		"this is interpreted by the program based on the following rules
+		"and only the language resources represented are served.
+	"multiversioning
+		"inspired from bash bracket enumeration
+		"
+
+alternation_eg:
+	alternation_eg .filepane
+		$filepane_border_set
+		"ALTERNATION:
+		<pre>
+			"name .class lang=(en|ja|fr)
+			"	"hello | "こんにちわ | "bonjour
+			"	subitem .class
+			"		"there's no selection here.
+			"		"there's an option here | "これわオップチやんです。 | "le option
+			"		subsubitem |
+			"			"this stuff shows up in english
+			"			more
+			"				stuff
+			"		| subsubitem
+			"			にほんごだっけ
+			"			ja
+			"				only
+			"					stuff
+			"		| subsubitem
+			"			fr_only_stuff
+			"		"a line
+			"		| "ぃんです
+			"		| "le line
+			"
+
+
+
+invocation .s
+	<h4>invocation
+	"Divinity works as a scripting language.  The same process applies as to creating shell scripts. Begin your file with <code>#!/YOUR_PATH_TO/divinity</code> and set its execute bits."
+
+
+bnf
+	"PSUEDO-BNF:
+	<pre>
+	     "input_file	= { blank_line  | nonblank_line };
+	     "blank_line	= { WS }, EOL;
+	     "nonblank_line	= { indented_line | rooted_line };
+	     "indented_line	= BOL, indent, nonblank_string, EOL;
+	     "rooted_line	= BOL, nonblank_string, EOL;
+	     "nonblank_string	= markup | text | id | class | macro;
+	     "markup		= open_markup | closed_markup | noclose_markup;
+	     "open_markup	= html_open_tag, [ undefinedtext ];
+	     "closed_markup	= html_open_tag, [ innertext ], htmlclosetag;
+	     "no_close_markup	= html_void_element_tag, [ undefinedtext ];
+	     "text         	= '&quot;', [ innertext ], ['&quot;'];
+	     "id           	= css_ident_selector_without_hash, [ css_class_selector ];
+	     "class        	= css_class_selector, [ undefinedtext ];
+	     "macro	   	= '$', macro_url;
+	     "macro_url    	= infile_macro_location | external_macro_location | remote_macro_location;
+
+input_types
+	macro
+		internal
+		external
+		inline
+	text
+
+macro_rules
+	"macros can reference internal blocks
+	"macros can reference external files
+	"macro that begins at left margin can expand external file
+	"macro that begins inline can expand an inline macro
+	"macro that begins as first word after indent expands an internal block
+	"macro that contains itself by default only recurse 1 time.
+	"if you want to recurse more than once, you must suffix the macro with {n}
+	"where n is a number of recursions to perform.
+	"ie., <pre>$macro
+	"
+	"macro
+	"	somestuff
+	"		$macro{5}
+	"</pre>
+	"reiterates somestuff 5 times.
+
+macros_eg .filepane
+	$filepane_border_set
+	"MACROS:
+	"think of macros as multi-line, nested printf format strings<br>
+	"use the macro once to expand the matching  block
+	"within the matching block, use the macro again to declare an insertion point.
+	"(using a macro within itself declares an insertion point, rather than a recursive macro.)
+	<pre>
+		"$include:external_file1
+		"	"file contents scope avail to childr and sibs
+		"	$internal_block
+		"		$include:external_file2
+		"			"content scope available to childr and sibs only
+		"
+		"internal_block
+		"	some_divs
+		"		$internal_block		/* becomes the insert point */
+		"	other_possible_divs
+		"
+		"$include:external_file3
+		"	"content scope available to entire file
+		"
+		"macro_classes .info
+		"	"MACRO CLASSES:
+		"	"
+		"
+		"headofblock
+		"	ident $.macro_class
+		"		"this stuff gets inserted at insert point
+		"	$double_example $.class
+		"
+		"
+		".macro_class
+		"	wrapper_elements
+		"		more_wrapper_elements
+		"			$.macro_class		/* insert point */
+		"		even_more_wrapper_elements
+		"
+		"double_example
+		"	"this stuff also gets inserted at insert point
+		"	"the .class block becomes a wrapper for double_example
+		"	"the result: <div id="double_example" class="class">
+			
+
+
+
+executive_summary .filepane
+	$filepane_border_set
+	"EXECUTIVE SUMMARY:
+	"
+	"Divinity.
+	"Div identity outlines.
+	"Lost in DIV's.
+	"Text based.
+	"Structuring pages and sites.
+	"Bake it into HTML files. -or-
+	"Generate HTML on the fly.  Good for design process.
+	"Works with any web-server as CGI.
+	"
+	"Replaces hand-coding in HTML.
+	"Replaces WYSIWYG editing which can generate messy code.
+	"Divinity markdown is object oriented.
+	"Does not replace or modify how JavaScript and CSS interact with HTML.
+	"Does not require external libraries.
+	"Does not require the designer to learn a new whole new language.
+	"Only requires a simple syntax for the structure of the Divinity file.
+	"It's syntax is based on other languages the designer may already be familiar with.
+
+the_complete_language:
+"<h2>THE COMPLETE LANGUAGE:</h2>
+.panes
+	<pre>
+		"GRAMMAR TYPE		SYNTAX				SYNTAX HERITAGE
+		"------------		-------				---------------
+		"BLANK_LINE	
+		"IDENT			<i>name</i>				
+		"CLASS			.<i>name</i>				css
+		"TEXT			&quot;<i>text as written...</i>		
+		"TEXT			'<i>text as written...</i>		
+		"HTML_OPENTAG		&lt;<i>tag as written...</i>&gt;		html
+		"MACRO			$<i>name</i>				sh
+		"INCLUDE			$<b>file:</b><i>file</i>			
+		"LABEL			<i>name</i><b>:</b>				c
+		'ATTRIBUTE		<i>attr</i>="<i>value</i>"			html
+		"COMMENT			/* <i>...</i> */			css, c
+		"COMMENT			//				gnu c
+		"
+		"<i>in development...</i>
+		"SWITCH			@<i>ENVAR</i>( <i>val1</i> | <i>val2</i> | <i>...</i> )	css, regex, ebnf
+		"BRANCH			| <i>alternative line...</i>		regex, ebnf
+		"
+		"SWITCH			@<i>EXPRESSION</i>
+		"BRANCH				<i>conditional content...</i>
+		"
+		"SWITCH			@<i>ENVAR</i>
+		"BRANCH				@<i>VALUE</i>
+		"BRANCH					<i>conditional content...</i>
+		"
+		"ITERATE			{<i>number</i>}			regex
+		"EXECUTE			$(<i>shell command</i>)		sh
+		"ENV_VAR			$<i>ENVAR</i>				sh
+		"SEARCH_N_CAPTURE	$s/<i>regex</i>/$<i>macro</i>			grep
+
+complete_example .filepane
+	$filepane_border_set
+	"AN EXAMPLE OF ALL SYNTAX
+	<pre>
+		"&lt;!DOCTYPE html>
+		"&lt;html>
+		"	$include:"my_common_page_wrapper.div"
+		"			div_id .div_class
+		"				$local_imported_object
+		"				$global_imported_object
+		"				$global_object
+		"					"This gets inserted at $INSERT point.
+		"
+		"global_object
+		"	more .stuff
+		"		$INSERT
+		"	other .stuff
+		"
+		"$include:my_common_html_bits.div
+		"
+
+coding_style_guide
+	"coding style guide
+	<pre>
+		"functions	lowercase_with_underscores()
+		"variables	lowercasewithoutunderscores unless double letters bat_tamer vs. battamer
+		"c macros	UPPERCASE_WITH_UNDERSCORES
+		"
+		"note:	no CamelCase, no-dash-names
+

@@ -1,0 +1,11 @@
+macro_children_union
+	branch
+		$test_union
+			root_decendent_after_macro
+
+
+test_union
+	macro_child_A
+		$test_union
+	macro_child_B
+		macro_decendent

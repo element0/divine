@@ -1,0 +1,3 @@
+macro_external_main
+	$../macro-external-ref.txt
+		this_should_be_nested

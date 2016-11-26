@@ -1,0 +1,16 @@
+.bluebox
+{
+	width:200px;
+	height:200px;
+	border-color:blue;
+	border-width:1px;
+}
+
+.redbox
+{
+	width:100px;
+	height:100px;
+	border-color:red;
+	border-width:2px;
+}
+

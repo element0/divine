@@ -1,0 +1,2 @@
+line  : [ indent ] [ '<' tag ] [ id_shorthand ] [ class_shorthand ] ['>']  eoi 
+

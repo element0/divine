@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<!-- comment -->
+	<head>
+		<title>
+			"Divinity Test"
+		<link rel="stylesheet" type="text/css" href="testfile2.css">
+	<body>
+		<div id=startbox class=bluebox>
+			endbox .yellowbox
+				"endbox"
+			.bluboxes
+				$.yellowbox
+				$.blubox
+				$.blubox
+				$.blubox
+
+
+.blubox
+	"bluebox"
+		$.redbox
+
+.redbox
+	"redbox"
+
+.yellowbox
+	"yellowbox"
+
+$.redbox

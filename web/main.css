@@ -1,0 +1,258 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:500,400,200,100|Dosis:400,200);
+
+html {
+	font-family: "Raleway", sans-serif;
+}
+body {
+	/*
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	*/
+	border:0px;
+	padding:0px;
+	margin:0px;
+}
+
+#divinity_site {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	max-width:100%;
+	/* height:100%; */
+	border-style:none;
+	border:0px;
+	padding:0px;
+	margin:0px;
+	background-color:rgba(0,90,70,.3);
+}
+#page_content {
+	/* page_content defines the "printable area" of the window */
+	/* using "margin-(left|right):auto" to center element
+		requires position:(initial|static); */
+	position:static;
+	margin-left:auto;
+	margin-right:auto;
+	width:90%;
+}
+
+#main_column {
+	margin-left:3em;
+}
+
+
+#title_header {
+	padding-top:1em;
+	margin-bottom:1em;
+}
+
+#title_bubble {
+	display:inline-block;
+	padding:1em;
+	border-radius:25px;
+	box-shadow: 0px 0px 20px rgba(255,255,255,.7);
+	background-color:rgba(255,255,255,.7);
+}
+
+#title {
+	font-weight:200;
+	font-size:30pt;
+}
+
+#byline {
+	font-weight:200;
+	font-size:10pt;
+	margin-top:1em;
+}
+.txt-zero {
+	font-family:"Dosis", Monaco, monospace;
+	font-weight:200;
+}
+
+#navmenu {
+	
+	padding-left:1em;
+	display:inline-block;
+	margin-bottom:.6em;
+
+}
+
+.navitm {
+	border-style:solid;
+	border-width:.2em;
+	border-color:rgba(255,255,255,.7);
+	border-radius:25px;
+	padding:.4em;
+	padding-right:.5em;
+	float:left;
+	height:1.6em;
+	width:auto;
+	display:inline-block;
+	margin-right:.2em;
+	line-height:150%;
+}
+
+
+#main_text_column {
+	border-style:none;
+	border-width:1px;
+	/* border-color:grey; */
+	background-color: rgba(255,255,255,.7);
+	border-radius:25px;
+	padding-top:1em;
+	padding-left:1.5em;
+	width:90%;
+}
+
+.section {
+	margin-bottom:3em;
+}
+
+.panes {
+	position:relative;
+	display:inline-block;
+	min-width:30em;
+}
+
+.filepane {
+	float:left;			/* this keeps the panes on one line like text */
+	position:relative;
+	width:31em;
+	min-width:22em;
+	max-width:50em;
+	/* height:20em; */
+	/* margin:.5em; */
+	margin-bottom:3em;
+	overflow:hidden;
+}
+
+.filepane-header {
+	padding-left:1em;
+}
+
+.filepane-content {
+	position:relative;
+	padding-top:2px;
+	padding-left:1em;
+	overflow:hidden;
+}
+
+
+
+.filepane-border,
+.filepane-inset {
+	position:absolute;
+	border-radius:25px;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+}
+
+.filepane-border {
+	z-index:-2;
+	background: -webkit-linear-gradient(left top,
+		rgba(0,0,0,.7), rgba(0,0,0,.3), rgba(0,0,0,.1), rgba(0,0,0,0), rgba(0,0,0,0));
+	background: -o-linear-gradient(bottom right,
+		rgba(0,0,0,.7), rgba(0,0,0,.3), rgba(0,0,0,.1), rgba(0,0,0,0), rgba(0,0,0,0));
+	background: -moz-linear-gradient(bottom right,
+		rgba(0,0,0,.7), rgba(0,0,0,.3), rgba(0,0,0,.1), rgba(0,0,0,0), rgba(0,0,0,0));
+	background: linear-gradient(to bottom right,
+		rgba(0,90,70,.7), rgba(0,90,70,.3), rgba(0,90,70,.1), rgba(0,90,70,0), rgba(0,90,70,0));
+}
+
+.filepane-inset {
+	z-index:-1;
+	background-color: rgba(255,255,255,.2);
+}
+
+.filepane-border-top,
+.filepane-border-left {
+	position:absolute;
+	top:1px;
+	left:0px;
+	background: -webkit-linear-gradient(left top,
+		rgba(0,0,0,.7), rgba(0,0,0,.3), rgba(0,0,0,.1), rgba(0,0,0,0), rgba(0,0,0,0));
+	background: -o-linear-gradient(bottom right,
+		rgba(0,0,0,.7), rgba(0,0,0,.3), rgba(0,0,0,.1), rgba(0,0,0,0), rgba(0,0,0,0));
+	background: -moz-linear-gradient(bottom right,
+		rgba(0,0,0,.7), rgba(0,0,0,.3), rgba(0,0,0,.1), rgba(0,0,0,0), rgba(0,0,0,0));
+	background: linear-gradient(to bottom right,
+		rgba(0,0,0,.7), rgba(0,0,0,.3), rgba(0,0,0,.1), rgba(0,0,0,0), rgba(0,0,0,0));
+}
+.filepane-border-top {
+	height:2px;
+	width:50%;
+}
+.filepane-border-left {
+	height:100px;
+	width:2px;
+}
+
+#more {
+	text-align:center;
+	width:85%;
+	font-size:28pt;
+	font-weight:100;
+}
+
+a {
+	text-decoration:none;
+	color:rgb(100,100,100);
+}
+
+#title>a {
+	color:rgb(0,0,0);
+}
+
+#nav {
+	position:absolute;
+	top:0px;
+	height:100%;
+	width:100%;
+}
+.navbtn {
+	font-weight:100;
+	font-size:50pt;
+	visibility:hidden;
+	position:fixed;
+	top:40%;
+	width:20px;
+}
+#leftbutton {
+	float:left;
+	left:.1em;
+}
+#rightbutton {
+	float:right;
+	right:.3em;
+}
+#the_complete_language {
+	width:auto;
+	margin-right:5em;
+}
+[id=the_complete_language]>pre>i {
+	color:Gray;
+}
+
+.off {
+	visibility:hidden;
+}
+
+h2 {
+	font-size:14pt;
+	font-weight:500;
+	font-style:bold;
+}
+
+h3 {
+	font-weight:200;
+
+}
+
+pre {
+	line-height:2;
+}

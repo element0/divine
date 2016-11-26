@@ -1,0 +1,337 @@
+== WORKING TITLE:  Divinity ==
+--------
+
+== DESCRIPTION: ==
+
+--------
+
+
+== ANTECENDENTS:  ==
+
+ibh - Indent-based hierarchy parser
+	http://code.google.com/p/ibh/
+	latest development
+		http://code.google.com/p/ibh/source/list
+		Mar 27, 2013
+	GPLv3
+
+--------
+
+== LICENSE:  GPLv3 ==
+--------
+
+
+== JOURNAL: ==
+
+
+feb 21, 2013
+	googled "hierarchy parser"
+		found "ibh"
+		found discussion of parsing on stackoverflow
+	research GPLv3
+
+
+--------
+
+
+== CODE DESIGN:  version1.002  date ( 3-1-2014 ) ==
+
+---example file1:"original"
+root.node
+	child.node
+		$externalfile.node
+			decendent.node
+				$orignalnamespacemacro.node
+
+---object:virtual
+node
+	datapoint
+	scanner
+
+output
+	outputindent
+
+---object
+ox
+	node
+		$env
+	env
+		filepath
+		file
+		$output_env
+	output_env
+		output_indent
+		$lexstack
+		$lex
+	.lex
+	lexstack
+
+
+--objects
+hyena
+	files
+	datapoints
+	scanners
+	output formatters
+scanner
+	nodes
+
+
+
+
+--architechture.v3
+hyena
+	dispatch ox->scanner
+ox
+	dispatch divinity->scanner(s)
+divinity
+
+
+--structure.v3
+hyena
+	scanners
+		ox
+			scanners
+				divinity
+
+---functions.v3
+
+input
+	filename
+	args
+	envars
+	stdin
+	configfiles
+ox scanner
+	scanner_test_file
+	find_first_node
+	$parse_node
+
+parse_node
+	parse_fore
+	do{
+		get_next_datapoint
+		find_node_at_datapoint > nextnode
+		ascertain_relationship_with_next_node?==
+			"child"
+				parse_node(nextnode) > nextnode
+				continue;
+			| "sib"
+				parse_aft
+				parse_node
+				continue;
+			| *
+				parse_aft
+				return nextnode;
+				continue;
+
+	
+
+
+---functions.v2
+
+-- ox module
+
+hiena scanner api:
+	// approximate proceedure order
+	scanner_test_file
+	find_first_node
+	parse_node_fore
+	get_inner_datapoint
+	find_node_at_datapoint
+	ascertain_next_node_relationship
+	parse_node_aft
+
+	// internal ?
+	find_node_by_expression
+	get_datapoint
+	set_datapoint
+
+
+---functions
+object make and destroy funcs
+	...
+
+output funcs
+	output_indent
+	output_opentag
+	output_closetag
+	
+
+file funcs
+	setpos_at_macro
+	setpos_first_rooted_block
+	open_file
+
+parse funcs
+	parse_node
+		get_node_rawline
+		get_indent
+		string_from_regmatch
+	parse_tree
+
+main
+	$object make and destroy...
+	$file funcs
+	$parse funcs
+
+
+---language
+
+outline macro-language syntax
+	block
+		rooted block
+		floating block
+	line
+		rooted line
+		indented line
+	content-text
+	macro-link
+	label
+	blankline
+
+divinity syntax
+	text
+	html
+	envar
+	attribute
+	attribute shorthand
+	switchdef
+	switch
+
+
+---example file2:"externalfile:
+externalfile.node
+	child.node
+		$externalfilenamespacemacro.node
+			$externalfile.insertpoint
+
+
+---explaination
+when a node is an external file macro type, it creates a new env and duplicates that to all its children and decendents.
+if decendent nodes are macro types, they reference the new file namespace.
+back in the original file, the decendent node which is grafted into the tree from externalfile at ".insertpoint", this original decendent node's macro decendent references the original file's namespace.
+
+---question
+but what if two files external-macro each other? or some circular pattern of external-macros?
+
+---circular macros
+
+each macro name with iterator get pushed onto a stack
+
+$macro
+$externalfile
+$macro{2}
+$anothermacro
+$macro
+
+which comes from this example tree
+
+something
+	$macro
+		nothing
+
+macro
+	$externalfile
+		$macro{2}
+	$anothermacro
+
+anothermacro
+	$macro		// this macro executes once
+
+and is expected to expand like this
+
+something
+	macro
+		externalfile
+			macro
+				externalfile
+					macro
+						externalfile
+							nothing
+						anothermacro
+							macro
+							...
+				anothermacro
+		anothermacro
+	
+
+--------
+
+== CODE DESIGN:  version1.001  date ( 2-25-2014 ) ==
+
+$cpp directives
+
+$compile time options
+
+structs
+	Lex
+	Env
+	Node
+
+make and destroy
+	new_env
+	rm_env
+	new_node
+	rm_node
+	init_lex
+	rm_lex
+	init_lex_item
+	rm_lex_item
+
+output functions
+	output_http_header
+	output_indent
+	output_opentag
+	output_closetag
+
+file position functions
+	setpos_at_macro
+	setpos_first_rooted_block
+
+parse functions
+	init_node
+	get_node_rawline
+	get_indent
+	string_from_regmatch
+	$parse_tree
+
+main function
+	$main
+
+compile time options
+	DBOY_CLOSETAG_STYLE
+	OUTPUT_HTTP_HEADER
+	TABWIDTH
+
+"----
+
+parse_tree
+	get input node
+	if node type MACRO
+	if node type ! MACRO
+		output_opentag(node);
+	init_node(nextnode);
+	if nextnode not ENDOFBLOCK
+
+	
+
+main
+	get cmdline input
+	set first file
+	get list of vernaculars
+	for each vernacular
+		get position of first vernacular-node
+		new Node firstvernacularnode
+	for closest vernacular-node from head of file
+		parse_tree( firstvernacularnode );
+
+
+--------
+
+== MULTI-LEXING: ==
+
+
+
+
+--------

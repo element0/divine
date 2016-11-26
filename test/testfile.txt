@@ -1,0 +1,33 @@
+	test this line for valid start
+		this is not valid start
+  this is not valid start
+
+box10 .box
+box11 .box
+	box12 .box
+		"box 12"
+        spank
+	$<soul id=frank>
+		my
+			ass
+	you .hussy
+		one .last
+			thing
+
+box13 .box
+
+<html id=testid>
+	$<body>
+
+<soul id=frank>
+	box1 .box
+		"box 1"
+		box2 .box
+			"box 2"
+			$box3
+		box4 .box
+			"box 4"
+
+box3
+	"box 3"
+

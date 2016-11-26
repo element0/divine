@@ -1,0 +1,8 @@
+macro_external_ref
+	this_forms_an_envelope
+		$macro_external_ref
+	this_comes_after_the_envelope
+		this_is_also_from_the_included_file
+			and_this
+	and_this
+and_this
