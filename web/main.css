@@ -14,6 +14,7 @@ body {
 	border:0px;
 	padding:0px;
 	margin:0px;
+	background-color:rgba(0,90,70,.3);
 }
 
 #divinity_site {
@@ -27,7 +28,6 @@ body {
 	border:0px;
 	padding:0px;
 	margin:0px;
-	background-color:rgba(0,90,70,.3);
 }
 #page_content {
 	/* page_content defines the "printable area" of the window */

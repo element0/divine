@@ -1,11 +1,11 @@
-#!/home/raygan/Cosms/Dboy/Divinity/divinity
+#!/usr/local/bin/divine
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Divinity - Documentation
+		<title>About Devine
 		<link rel="stylesheet" type="text/css" href="main.css">
 	<body>
-		$divinity_site
+		$divine_site
 
 
 TODO:
@@ -15,7 +15,7 @@ TODO:
 
 
 
-divinity_site
+divine_site
 	page_content
 		main_column
 			$title_header
@@ -74,7 +74,7 @@ main_text_column
 			$filepane_border_set
 			"DIVINITY FILE:
 			<pre>
-				$divinity-file
+				$divine-file
 		css-pane .filepane
 			$filepane_border_set
 			"CSS FILE:
@@ -105,7 +105,7 @@ nav
 
 
 
-divinity-file:
+divine-file:
 	"$html5
 	"	someid .someclass
 	"		&quot;Divine Example
@@ -143,7 +143,7 @@ filepane_border_set:
 title_header
 	title_bubble
 		title
-			'<a href=""><b>Div</b>inity</a>
+			'<a href=""><b>Div</b>ine</a>
 		tagline
 			"a simple web language
 			undefined@RANDOM
@@ -162,6 +162,7 @@ whofor
 
 whatis:
 	"<h2>WHAT IT IS:</h2>
+
 	<p>
 		"Indented text --> HTML.
 	<p>
@@ -192,7 +193,7 @@ what_it_looks_like:
 .panes
 	demo001.filepane
 		.filepane-header
-			"<h3>text file</h3>
+			"<h3>source file</h3>
 		.filepane-content
 			$filepane_border_set
 			<pre>
@@ -201,7 +202,7 @@ what_it_looks_like:
 				"		greenbox
 	demo002.filepane
 		.filepane-header
-			"<h3><i>generates...</i></h3>
+			"<h3><i>output</i></h3>
 		.filepane-content
 			$filepane_border_set
 			<pre>
@@ -302,7 +303,7 @@ howto
 	"after the initial idea has been outlined
 	"	the outline can be extended with divine markdown
 	"	a separate user supplied css file can reference the idents, classes and elements
-	"	with divinity installed on the web server, a #! directive added to the first line
+	"	with divine installed on the web server, a #! directive added to the first line
 	"		and the execute bit on the outline file set,
 	"		the outline can be executed as a CGI program on the webserver
 	"		generating HTML on the fly.
@@ -316,8 +317,8 @@ mini-manual
 
 installation
 	"INSTALLATION:
-	"For <code>CLI</code> install <code>divinity</code> in the <code>PATH</code> accessible by your shell."
-	"For <code>CGI</code> install <code>divinity</code> in the <code>PATH</code> accessible by your webserver.  (This would be the <i>binary</i> path not the cgi path.)"
+	"For <code>CLI</code> install <code>divine</code> in the <code>PATH</code> accessible by your shell."
+	"For <code>CGI</code> install <code>divine</code> in the <code>PATH</code> accessible by your webserver.  (This would be the <i>binary</i> path not the cgi path.)"
 
 
 using_as_cgi
@@ -366,7 +367,7 @@ alternation_eg:
 
 invocation .s
 	<h4>invocation
-	"Divinity works as a scripting language.  The same process applies as to creating shell scripts. Begin your file with <code>#!/YOUR_PATH_TO/divinity</code> and set its execute bits."
+	"Divinity works as a scripting language.  The same process applies as to creating shell scripts. Begin your file with <code>#!/YOUR_PATH_TO/divine</code> and set its execute bits."
 
 
 bnf
