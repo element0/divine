@@ -3,4 +3,5 @@ commitmsg.txt
 divine
 out/*
 testbin
-archive
+archive/
+archive/testbin

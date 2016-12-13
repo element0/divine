@@ -1,5 +1,7 @@
 # divine
 
+![Travis CI Status](https://api.travis-ci.org/element0/divine.svg?branch=master)
+
 The 'divine' tool - it generates HTML from an outline.
 
 	red
