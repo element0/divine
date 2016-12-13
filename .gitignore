@@ -1,2 +1,6 @@
 *.swp
 commitmsg.txt
+divine
+out/*
+testbin
+archive

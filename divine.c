@@ -100,7 +100,7 @@
 
 
 /*----- INCLUDES -----*/
-#define _GNU_SOURCE		/* required by __secure_getenv() */
+/* #define _GNU_SOURCE	*/	/* required by __secure_getenv() */
 
 #include <stdio.h>
 #include <stdlib.h>		/* provides __secure_getenv(), provides char **environ */
