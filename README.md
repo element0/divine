@@ -13,9 +13,9 @@ will generate:
 	<div id="red">
 	    <div id="green">
 	        <div id="blue">
-		</div>
+	        </div>
 	    </div>
-        </div>
+	</div>
 
 it has some "Classy" features such as:
 
@@ -31,15 +31,15 @@ will generate:
 	        <div id="blue" class="bayou">
 		</div>
 	    </div>
-        </div>
+	</div>
 
 it has some really NOT classy limitations:
 
 	red .brick .warehouse
 
-will _not_ add both classes -- please *FIXME*
+will _not_ add both classes -- maybe at another time.
 
-But don't change the channel!  There's are _MIXINS_!
+There are reference expansions.
 
 	red
 	    $green
