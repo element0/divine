@@ -48,13 +48,13 @@ There are reference expansions.
 	    blue
 
 will also generate:
-	
-        <div id="red">
+
+	<div id="red">
 	    <div id="green">
 	        <div id="blue">
 		</div>
 	    </div>
-        </div>
+	</div>
 
 And a very special caveat which can both help and harm: Please be advised that line breaks break the chain of love and leave the content unrendered.  This could be frustrating.  But it's actually very awesome.
 
